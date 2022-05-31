@@ -5,6 +5,7 @@ import com.example.AlbumException.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -13,7 +14,7 @@ public class CommentResource {
     @Autowired
     private CommentService commentServices;
     @PostMapping
-    public Comment saveComment(@RequestBody Comment comment)
+    public Comment saveComment(@RequestBody @Valid Comment comment)
     {
         return commentServices.saveComment(comment);
     }
@@ -23,7 +24,7 @@ public class CommentResource {
         return commentServices.getAllComments();
     }
     @GetMapping("/commentID")
-    public List<Comment> getById(@RequestParam(name = "commentID") String commentID)
+    public Comment getById(@RequestParam(name = "commentID") String commentID)
     {
         return commentServices.getById(commentID);
     }

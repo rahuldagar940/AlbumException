@@ -27,8 +27,11 @@ public class UserService {
         userRepository.deleteById(userID);
     }
 
-    public List<User> getById(String userID) {
-        return userRepository.findAllById(userID);
+    public User getById(String userID) {
+        return userRepository.findById(userID).get();
     }
 
+    public List<User> getAllByName(String name) {
+        return userRepository.findAllByName(name);
+    }
 }

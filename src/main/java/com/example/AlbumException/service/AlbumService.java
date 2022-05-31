@@ -30,8 +30,8 @@ public class AlbumService {
         albumRepository.deleteById(albumID);
     }
 
-    public List<Album> getByID(String albumID)
+    public Album getByID(String albumID)
     {
-        return albumRepository.findAllById(albumID);
+        return albumRepository.findById(albumID).get();
     }
 }

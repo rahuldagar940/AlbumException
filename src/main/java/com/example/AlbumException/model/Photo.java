@@ -1,5 +1,6 @@
 package com.example.AlbumException.model;
 
+import com.example.AlbumException.validation.CreatedByValidation;
 import org.springframework.data.annotation.Id;
 
 public class Photo {
@@ -7,6 +8,7 @@ public class Photo {
     private String id;
     private int albumID;
     private String photoURL;
+    @CreatedByValidation
     private String createdBy;
     private String dateCreated;
 

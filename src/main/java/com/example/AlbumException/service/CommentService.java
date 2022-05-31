@@ -28,7 +28,7 @@ public class CommentService {
         commentRepository.deleteById(commentID);
     }
 
-    public List<Comment> getById(String commentID) {
-        return commentRepository.findAllById(commentID);
+    public Comment getById(String commentID) {
+        return commentRepository.findById(commentID).get();
     }
 }

@@ -28,7 +28,7 @@ public class PhotoService {
         photoRepository.deleteById(photoID);
     }
 
-    public List<Photo> getById(String photoID) {
-        return photoRepository.findAllById(photoID);
+    public Photo getById(String photoID) {
+        return photoRepository.findById(photoID).get();
     }
 }

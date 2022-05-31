@@ -1,12 +1,17 @@
 package com.example.AlbumException.model;
 
+import com.example.AlbumException.validation.CreatedByValidation;
 import org.springframework.data.annotation.Id;
+
+import javax.validation.constraints.Min;
 
 public class Comment {
     @Id
     private String id;
     private int photoID;
+    @Min(value = 5)
     private String message;
+    @CreatedByValidation
     private String createdBy;
     private String dateCreated;
 

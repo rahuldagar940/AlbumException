@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface AlbumRepository extends MongoRepository<Album, String> {
 
-    List<Album> findAllById(String albumID);
+    //List<Album> findAllById(String albumID);
 }

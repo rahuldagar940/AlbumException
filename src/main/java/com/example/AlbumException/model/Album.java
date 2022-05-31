@@ -1,13 +1,19 @@
 package com.example.AlbumException.model;
 
+import com.example.AlbumException.validation.CreatedByValidation;
+import org.hibernate.validator.constraints.Length;
 import org.springframework.data.annotation.Id;
+
+import javax.validation.constraints.Max;
 
 public class Album
 {
     @Id
     private String id;
+    @Length(max = 10)
     private String name;
     private String coverPhotoURL;
+    @CreatedByValidation
     private String creatredBy;
     private String dateCreated;
 
